@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion";
-import { Badge } from "./components/ui/badge";
+import { Badge } from "./ui/badge";
 import { Check, Users, Euro, Trophy } from "lucide-react";
 
 export default function ClubSelector({ clubs, selectedId, onSelect, takenClubIds = [] }) {
