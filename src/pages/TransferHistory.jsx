@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../api/base44Client';
 import { ArrowRightLeft, Search, TrendingUp, Euro, Calendar } from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { Badge } from '@/components/ui/badge';
+import { Input } from '../components/ui/input';
+import { Badge } from '../components/ui/badge';
 
 const formatPrice = (p) => {
   if (!p) return '—';

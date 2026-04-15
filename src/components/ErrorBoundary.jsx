@@ -1,5 +1,5 @@
 import React from 'react';
-import { createPageUrl } from '@/utils';
+import { createPageUrl } from '../utils';
 
 export default class ErrorBoundary extends React.Component {
   constructor(props) {

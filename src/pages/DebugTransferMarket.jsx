@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
-import { Button } from "@/components/ui/button";
+import { base44 } from '../api/base44Client';
+import { Button } from "../components/ui/button";
 
 export default function DebugTransferMarket() {
   const [allPlayers, setAllPlayers] = useState(null);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../api/base44Client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -7,20 +7,20 @@ import {
   AlertCircle, Zap, Search, X, Filter, Gavel, Plus, SlidersHorizontal, Users,
   CheckCircle2, Trophy, Globe, RefreshCw, Star
 } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
+import { Textarea } from "../components/ui/textarea";
+import { Badge } from "../components/ui/badge";
 import {
   Dialog, DialogContent, DialogHeader, DialogTitle,
-} from "@/components/ui/dialog";
-import { Switch } from '@/components/ui/switch';
-import AuctionCard from '@/components/community/AuctionCard';
-import CreateAuctionForm from '@/components/community/CreateAuctionForm';
-import OfficializationTab from '@/components/community/OfficializationTab';
-import MercatoStatusBanner from '@/components/MercatoStatusBanner';
-import { fetchAll } from '@/utils/fetchAll';
+} from "../components/ui/dialog";
+import { Switch } from '../components/ui/switch';
+import AuctionCard from '../components/community/AuctionCard';
+import CreateAuctionForm from '../components/community/CreateAuctionForm';
+import OfficializationTab from '../components/community/OfficializationTab';
+import MercatoStatusBanner from '../components/MercatoStatusBanner';
+import { fetchAll } from '../utils/fetchAll';
 
 const POSITIONS = ['GK', 'CB', 'LB', 'RB', 'CDM', 'CM', 'CAM', 'LW', 'RW', 'ST'];
 const STAFF_ROLES = ['owner', 'admin', 'staff_mercato', 'staff_championnat', 'staff_developpement', 'staff_formation'];

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Slider } from '@/components/ui/slider';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Slider } from '../../components/ui/slider';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../components/ui/select';
 
 const MENTALITIES = [
   { value: 'ultra_defensive', label: '🛡️ Ultra Défensif', color: 'text-blue-400' },

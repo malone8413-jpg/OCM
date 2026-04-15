@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../api/base44Client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { MessageSquare, Flame, Loader2, LogIn, Trophy, GraduationCap, TrendingUp, Wifi, Shield, Calendar } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import PostCard from '@/components/community/PostCard';
-import CreatePost from '@/components/community/CreatePost';
+import { Button } from "../components/ui/button";
+import PostCard from '../components/community/PostCard';
+import CreatePost from '../components/community/CreatePost';
 
 
-import TournamentTab from '@/components/community/TournamentTab';
-import CommunityChat from '@/components/community/CommunityChat';
-import TrophiesTab from '@/components/community/TrophiesTab';
-import OfficializationAcademyTab from '@/components/community/OfficializationAcademyTab';
-import OfficializationDevelopmentTab from '@/components/community/OfficializationDevelopmentTab';
-import OnlineManagersTab from '@/components/community/OnlineManagersTab';
-import ClubsTab from '@/components/community/ClubsTab';
-import CalendrierTab from '@/components/community/CalendrierTab';
+import TournamentTab from '../components/community/TournamentTab';
+import CommunityChat from '../components/community/CommunityChat';
+import TrophiesTab from '../components/community/TrophiesTab';
+import OfficializationAcademyTab from '../components/community/OfficializationAcademyTab';
+import OfficializationDevelopmentTab from '../components/community/OfficializationDevelopmentTab';
+import OnlineManagersTab from '../components/community/OnlineManagersTab';
+import ClubsTab from '../components/community/ClubsTab';
+import CalendrierTab from '../components/community/CalendrierTab';
 
 const TABS = [
   { id: 'feed', label: 'Feed', icon: MessageSquare },

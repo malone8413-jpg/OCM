@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../../api/base44Client';
 import { Loader2, GraduationCap, Search } from 'lucide-react';
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
+import { Input } from "../../components/ui/input";
+import { Badge } from "../../components/ui/badge";
 import { motion } from 'framer-motion';
-import { fetchAll } from '@/utils/fetchAll';
+import { fetchAll } from '../../utils/fetchAll';
 import { formatDistanceToNow } from 'date-fns';
 import { fr } from 'date-fns/locale';
 

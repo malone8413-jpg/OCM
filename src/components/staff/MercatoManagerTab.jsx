@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Switch } from '@/components/ui/switch';
-import { Label } from '@/components/ui/label';
-import { base44 } from '@/api/base44Client';
+import { Switch } from '../../components/ui/switch';
+import { Label } from '../../components/ui/label';
+import { base44 } from '../../api/base44Client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import { Badge } from '@/components/ui/badge';
+import { Button } from '../../components/ui/button';
+import { Textarea } from '../../components/ui/textarea';
+import { Badge } from '../../components/ui/badge';
 import { Loader2, ShoppingCart, Lock, Unlock, Megaphone } from 'lucide-react';
 import { toast } from 'sonner';
 import { formatDistanceToNow } from 'date-fns';

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../../api/base44Client';
 import { useMutation } from '@tanstack/react-query';
 import { Gamepad2, User, Loader2, CheckCircle2, AlertCircle, LogOut } from 'lucide-react';
 import WelcomeTour from './WelcomeTour';
-import { Button } from '@/components/ui/button';
+import { Button } from '../../components/ui/button';
 
 export default function ProfileTab({ user, onSaved }) {
   const [eaPseudo, setEaPseudo] = useState(user?.ea_pseudo || '');

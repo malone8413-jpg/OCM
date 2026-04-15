@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../api/base44Client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { Loader2, Save, Plus, Trash2, Copy, Swords } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import { toast } from 'sonner';
-import TacticBoard from '@/components/tactics/TacticBoard';
-import TacticSettings from '@/components/tactics/TacticSettings';
-import { FORMATION_NAMES, buildLineupFromFormation } from '@/lib/formations';
+import TacticBoard from '../components/tactics/TacticBoard';
+import TacticSettings from '../components/tactics/TacticSettings';
+import { FORMATION_NAMES, buildLineupFromFormation } from '../lib/formations';
 
 export default function Tactics() {
   const queryClient = useQueryClient();

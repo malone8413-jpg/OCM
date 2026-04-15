@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../../api/base44Client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Send, Loader2, Shield, Reply, X } from 'lucide-react';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
-import { Button } from '@/components/ui/button';
+import { Button } from '../../components/ui/button';
 
 export default function CommunityChat({ currentUser }) {
   const queryClient = useQueryClient();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "../components/ui/badge";
 import { motion } from "framer-motion";
 import { Zap, Tag } from 'lucide-react';
 

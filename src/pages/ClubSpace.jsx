@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../api/base44Client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate, Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+import { createPageUrl } from '../utils';
 import { motion } from 'framer-motion';
 import {
   Shield, Euro, Users, Trophy, ArrowRightLeft,
@@ -10,32 +10,32 @@ import {
   Sparkles, Send, TrendingUp, TrendingDown, Crown,
   MessageSquare, Swords, BadgeCheck, Tag, Trash2, X, UserPlus, UserCircle
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Switch } from '@/components/ui/switch';
-import MoneyTransferModal from '@/components/dashboard/MoneyTransferModal';
-import DevelopmentPlanTab from '@/components/dashboard/DevelopmentPlanTab';
-import AcademyTab from '@/components/dashboard/AcademyTab';
-import NotificationCenter from '@/components/dashboard/NotificationCenter';
-import ClubChat from '@/components/clubspace/ClubChat';
-import MatchTab from '@/components/clubspace/MatchTab';
-import DeletePlayerButton from '@/components/clubspace/DeletePlayerButton';
-import CreatePlayerModal from '@/components/clubspace/CreatePlayerModal';
-import EvolutionTab from '@/components/clubspace/EvolutionTab';
-import PlayerCard from '@/components/PlayerCard';
-import PlayerStatsEditor from '@/components/clubspace/PlayerStatsEditor';
-import SquadTable from '@/components/clubspace/SquadTable';
-import EAPseudoGate from '@/components/clubspace/EAPseudoGate';
-import InboxPanel from '@/components/clubspace/InboxPanel';
-import MakeOfferModal from '@/components/clubspace/MakeOfferModal';
-import ProfileTab from '@/components/clubspace/ProfileTab';
-import PlayerMessagesPanel from '@/components/clubspace/PlayerMessagesPanel';
-import TransferOffer from '@/components/TransferOffer';
-import { fetchAll } from '@/utils/fetchAll';
+import { Button } from '../components/ui/button';
+import { Badge } from '../components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../components/ui/dialog';
+import { Input } from '../components/ui/input';
+import { Label } from '../components/ui/label';
+import { Switch } from '../components/ui/switch';
+import MoneyTransferModal from '../components/dashboard/MoneyTransferModal';
+import DevelopmentPlanTab from '../components/dashboard/DevelopmentPlanTab';
+import AcademyTab from '../components/dashboard/AcademyTab';
+import NotificationCenter from '../components/dashboard/NotificationCenter';
+import ClubChat from '../components/clubspace/ClubChat';
+import MatchTab from '../components/clubspace/MatchTab';
+import DeletePlayerButton from '../components/clubspace/DeletePlayerButton';
+import CreatePlayerModal from '../components/clubspace/CreatePlayerModal';
+import EvolutionTab from '../components/clubspace/EvolutionTab';
+import PlayerCard from '../components/PlayerCard';
+import PlayerStatsEditor from '../components/clubspace/PlayerStatsEditor';
+import SquadTable from '../components/clubspace/SquadTable';
+import EAPseudoGate from '../components/clubspace/EAPseudoGate';
+import InboxPanel from '../components/clubspace/InboxPanel';
+import MakeOfferModal from '../components/clubspace/MakeOfferModal';
+import ProfileTab from '../components/clubspace/ProfileTab';
+import PlayerMessagesPanel from '../components/clubspace/PlayerMessagesPanel';
+import TransferOffer from '../components/TransferOffer';
+import { fetchAll } from '../utils/fetchAll';
 
 const STAFF_ROLES = ['owner', 'admin', 'staff_mercato', 'staff_championnat', 'staff_developpement', 'staff_formation'];
 const OWNER_ROLES = ['owner', 'admin'];

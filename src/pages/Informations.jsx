@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../api/base44Client';
 import { Info, Flame, BookOpen } from 'lucide-react';
-import AnnouncementTab from '@/components/community/AnnouncementTab';
+import AnnouncementTab from '../components/community/AnnouncementTab';
 
 const INFO_SUBTABS = [
   { id: 'news', label: 'Annonces', icon: Flame },

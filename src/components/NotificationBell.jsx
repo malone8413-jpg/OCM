@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../api/base44Client';
 import { Bell, X, Gavel, ArrowRightLeft, Trophy, CheckCheck, Megaphone } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+import { Button } from '../components/ui/button';
+import { Badge } from '../components/ui/badge';
 import { AnimatePresence, motion } from 'framer-motion';
-import { createPageUrl } from '@/utils';
+import { createPageUrl } from '../utils';
 import { useNavigate } from 'react-router-dom';
 import { formatDistanceToNow } from 'date-fns';
 import { fr } from 'date-fns/locale';

@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
-import { base44 } from '@/api/base44Client';
+import { createPageUrl } from './utils';
+import { base44 } from './api/base44Client';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Home, Trophy, ArrowRightLeft, Shield, Users,
   Menu, X, LogOut, User, ChevronDown, Crown, Swords, Bell, TicketIcon, Info } from
 'lucide-react';
-import NotificationBell from '@/components/NotificationBell';
-import { Button } from "@/components/ui/button";
+import NotificationBell from './components/NotificationBell';
+import { Button } from "./components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger } from
-"@/components/ui/dropdown-menu";
-import ErrorBoundary from '@/components/ErrorBoundary';
+"./components/ui/dropdown-menu";
+import ErrorBoundary from './components/ErrorBoundary';
 
 const staffRoles = ['owner', 'admin', 'staff_mercato', 'staff_annonces', 'staff_championnat', 'staff_developpement', 'staff_formation'];
 

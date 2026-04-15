@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../api/base44Client';
 import { useQuery } from '@tanstack/react-query';
 import { Trophy, Loader2 } from 'lucide-react';
-import LeagueTable from '@/components/LeagueTable';
-import ScorerStats from '@/components/league/ScorerStats';
+import LeagueTable from '../components/LeagueTable';
+import ScorerStats from '../components/league/ScorerStats';
 
 const CHAMPIONSHIPS = [
   {

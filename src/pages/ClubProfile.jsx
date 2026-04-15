@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../api/base44Client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { Shield, ArrowLeft, Image, X, Loader2, Upload } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import PostCard from '@/components/community/PostCard';
+import { Button } from '../components/ui/button';
+import { Textarea } from '../components/ui/textarea';
+import PostCard from '../components/community/PostCard';
 
 export default function ClubProfile() {
   const navigate = useNavigate();

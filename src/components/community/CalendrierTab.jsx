@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../../api/base44Client';
 import { Loader2, Calendar, ChevronDown, ChevronUp } from 'lucide-react';
 
 const groupByJournee = (matches) => {

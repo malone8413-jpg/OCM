@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../../api/base44Client';
 import { formatDistanceToNow } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -8,10 +8,10 @@ import {
   Bell, Gavel, ArrowRightLeft, Trophy, Megaphone,
   CheckCheck, Trash2, ChevronRight, PartyPopper, UserPlus, Loader2
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+import { Button } from '../../components/ui/button';
+import { Badge } from '../../components/ui/badge';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+import { createPageUrl } from '../../utils';
 
 const TYPE_CONFIG = {
   welcome:       { icon: PartyPopper,     color: 'text-emerald-400', bg: 'bg-emerald-500/15 border-emerald-500/30', label: 'Bienvenue',    dot: 'bg-emerald-400' },

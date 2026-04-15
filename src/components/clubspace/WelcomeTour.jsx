@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+import { createPageUrl } from '../../utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Users, ArrowRightLeft, Wallet, Calendar, Swords, TrendingUp, Bell, ChevronRight, Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from '../../components/ui/button';
 
 const sections = [
   {

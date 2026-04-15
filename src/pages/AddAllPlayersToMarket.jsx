@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { base44 } from '@/api/base44Client';
-import { Button } from "@/components/ui/button";
+import { base44 } from '../api/base44Client';
+import { Button } from "../components/ui/button";
 import { Loader2, CheckCircle2 } from 'lucide-react';
 
 export default function AddAllPlayersToMarket() {

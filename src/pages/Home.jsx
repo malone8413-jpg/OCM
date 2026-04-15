@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../api/base44Client';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Link, useNavigate } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+import { createPageUrl } from '../utils';
 import { motion } from 'framer-motion';
 import { 
   Trophy, Users, ArrowRightLeft, 
   ChevronRight, Zap, Shield, Check, Loader2
 } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import LeagueTable from '@/components/LeagueTable';
-import ClubSelector from '@/components/ClubSelector';
-import CommunityChat from '@/components/community/CommunityChat';
+import { Button } from "../components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
+import LeagueTable from '../components/LeagueTable';
+import ClubSelector from '../components/ClubSelector';
+import CommunityChat from '../components/community/CommunityChat';
 
 const STAFF_ROLES = ['owner', 'admin', 'staff_mercato', 'staff_championnat', 'staff_developpement', 'staff_formation', 'staff_annonce'];
 

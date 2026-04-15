@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../api/base44Client';
 import { useNavigate } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
+import { createPageUrl } from '../utils';
+import { Button } from '../components/ui/button';
+import { Textarea } from '../components/ui/textarea';
 import { Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 
 const POSITIONS = {

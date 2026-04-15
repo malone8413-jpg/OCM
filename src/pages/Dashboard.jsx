@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
+import { base44 } from '../api/base44Client';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useNavigate, Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
+import { createPageUrl } from '../utils';
 import { motion } from 'framer-motion';
 import {
   Shield, Euro, Users, Trophy, ArrowRightLeft,
   Star, Bell, ChevronRight, Loader2, BarChart2,
   Sparkles, Send, TrendingUp, Crown
 } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import MoneyTransferModal from '@/components/dashboard/MoneyTransferModal';
-import DevelopmentPlanTab from '@/components/dashboard/DevelopmentPlanTab';
-import AcademyTab from '@/components/dashboard/AcademyTab';
-import NotificationCenter from '@/components/dashboard/NotificationCenter';
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+import MoneyTransferModal from '../components/dashboard/MoneyTransferModal';
+import DevelopmentPlanTab from '../components/dashboard/DevelopmentPlanTab';
+import AcademyTab from '../components/dashboard/AcademyTab';
+import NotificationCenter from '../components/dashboard/NotificationCenter';
 
 const STAFF_ROLES = ['owner', 'admin', 'staff_mercato', 'staff_championnat', 'staff_developpement', 'staff_formation'];
 

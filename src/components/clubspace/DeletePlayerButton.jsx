@@ -1,7 +1,7 @@
 import React from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { base44 } from '@/api/base44Client';
-import { Button } from '@/components/ui/button';
+import { base44 } from '../../api/base44Client';
+import { Button } from '../../components/ui/button';
 import { Trash2, Loader2 } from 'lucide-react';
 import {
   AlertDialog,
@@ -12,7 +12,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+} from "../../components/ui/alert-dialog";
 
 export default function DeletePlayerButton({ player, clubId, compact = false }) {
   const queryClient = useQueryClient();
