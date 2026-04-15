@@ -1,5 +1,5 @@
 function App() {
-  return <h1 style={{ color: "white", padding: "20px" }}>TEST OK</h1>;
+  return <h1 style={{ padding: "20px", color: "black" }}>TEST OK</h1>;
 }
 
 export default App;
