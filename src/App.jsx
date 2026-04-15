@@ -1,128 +1,85 @@
-import { Toaster } from "./components/ui/toaster"
-import { QueryClientProvider } from '@tanstack/react-query'
-import { queryClientInstance } from './lib/query-client'
-import NavigationTracker from './lib/NavigationTracker'
-import { pagesConfig } from './pages.config'
-import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import PageNotFound from './lib/PageNotFound';
-import { AuthProvider, useAuth } from './lib/AuthContext';
-import UserNotRegisteredError from './components/UserNotRegisteredError';
-import StaffRoom from './pages/StaffRoom';
-// Dashboard merged into ClubSpace
-import ImportPlayersFile from './pages/ImportPlayersFile';
-import Tactics from './pages/Tactics';
-import Notifications from './pages/Notifications';
-import Support from './pages/Support';
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { base44 } from "./api/base44Client";
 
-import Informations from './pages/Informations';
-import ClubProfile from './pages/ClubProfile';
+// Pages (adapte si tes chemins sont différents)
+import Home from "./pages/Home";
+import Informations from "./pages/Informations";
+import Communaute from "./pages/Communaute";
+import Mercato from "./pages/Mercato";
 
-const { Pages, Layout, mainPage } = pagesConfig;
-const mainPageKey = mainPage ?? Object.keys(Pages)[0];
-const MainPage = mainPageKey ? Pages[mainPageKey] : <></>;
+function App() {
+  const [user, setUser] = useState(null);
 
-const LayoutWrapper = ({ children, currentPageName }) => Layout ?
-  <Layout currentPageName={currentPageName}>{children}</Layout>
-  : <>{children}</>;
+  useEffect(() => {
+    base44.auth.me().then(setUser);
+  }, []);
 
-const AuthenticatedApp = () => {
-  const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
-
-  // Show loading spinner while checking app public settings or auth
-  if (isLoadingPublicSettings || isLoadingAuth) {
+  if (!user) {
     return (
-      <div className="fixed inset-0 flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-slate-200 border-t-slate-800 rounded-full animate-spin"></div>
+      <div style={{ padding: 20 }}>
+        <h2>Connexion requise</h2>
+        <button
+          onClick={async () => {
+            const email = window.prompt("Email :");
+            if (!email) return;
+
+            const password = window.prompt("Mot de passe :");
+            if (!password) return;
+
+            try {
+              await base44.auth.login(email, password);
+              window.location.reload();
+            } catch (err) {
+              const create = window.confirm(
+                "Compte introuvable. Créer un compte ?"
+              );
+              if (!create) return;
+
+              await base44.auth.register({
+                email,
+                password,
+                full_name: email,
+                role: "user",
+                has_selected_club: false,
+              });
+
+              window.location.reload();
+            }
+          }}
+        >
+          Connexion
+        </button>
       </div>
     );
   }
 
-  // Handle authentication errors
-  if (authError) {
-    if (authError.type === 'user_not_registered') {
-      return <UserNotRegisteredError />;
-    } else if (authError.type === 'auth_required') {
-      // Redirect to login automatically
-      navigateToLogin();
-      return null;
-    }
-  }
-
-  // Render the main app
   return (
-    <Routes>
-      <Route path="/" element={
-        <LayoutWrapper currentPageName={mainPageKey}>
-          <MainPage />
-        </LayoutWrapper>
-      } />
-      {Object.entries(Pages).map(([path, Page]) => (
-        <Route
-          key={path}
-          path={`/${path}`}
-          element={
-            <LayoutWrapper currentPageName={path}>
-              <Page />
-            </LayoutWrapper>
-          }
-        />
-      ))}
-      <Route path="/StaffRoom" element={
-        <LayoutWrapper currentPageName="StaffRoom">
-          <StaffRoom />
-        </LayoutWrapper>
-      } />
-      <Route path="/ImportPlayersFile" element={
-        <LayoutWrapper currentPageName="ImportPlayersFile">
-          <ImportPlayersFile />
-        </LayoutWrapper>
-      } />
-      <Route path="/Tactics" element={
-        <LayoutWrapper currentPageName="Tactics">
-          <Tactics />
-        </LayoutWrapper>
-      } />
-      <Route path="/Notifications" element={
-        <LayoutWrapper currentPageName="Notifications">
-          <Notifications />
-        </LayoutWrapper>
-      } />
-      <Route path="/Support" element={
-        <LayoutWrapper currentPageName="Support">
-          <Support />
-        </LayoutWrapper>
-      } />
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/informations" element={<Informations />} />
+        <Route path="/communaute" element={<Communaute />} />
+        <Route path="/mercato" element={<Mercato />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
 
-      <Route path="/Informations" element={
-        <LayoutWrapper currentPageName="Informations">
-          <Informations />
-        </LayoutWrapper>
-      } />
-      <Route path="/ClubProfile" element={
-        <LayoutWrapper currentPageName="ClubProfile">
-          <ClubProfile />
-        </LayoutWrapper>
-      } />
-      <Route path="/Dashboard" element={<Navigate to="/ClubSpace" replace />} />
-      <Route path="*" element={<PageNotFound />} />
-    </Routes>
+      <button
+        onClick={async () => {
+          await base44.auth.logout();
+          window.location.reload();
+        }}
+        style={{
+          position: "fixed",
+          bottom: 20,
+          right: 20,
+          padding: 10,
+        }}
+      >
+        Déconnexion
+      </button>
+    </Router>
   );
-};
-
-
-function App() {
-
-  return (
-    <AuthProvider>
-      <QueryClientProvider client={queryClientInstance}>
-        <Router>
-          <NavigationTracker />
-          <AuthenticatedApp />
-        </Router>
-        <Toaster />
-      </QueryClientProvider>
-    </AuthProvider>
-  )
 }
 
-export default App
+export default App;
